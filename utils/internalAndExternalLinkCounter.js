@@ -6,7 +6,7 @@ const linksCounter = async ($, baseDomain) => {
         const href = $(link).attr('href');
         const linkDomain = new URL(href, baseDomain).hostname;
 
-        if (linkDomain === baseDomain.hostman) {
+        if (linkDomain === baseDomain.hostname) {
             linksCount.internal++;
         } else {
             linksCount.external++;

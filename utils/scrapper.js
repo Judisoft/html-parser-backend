@@ -4,7 +4,8 @@ const {URL} = require("url");
 const htmlVersionIdentifier  = require("./htmlVersionIdentifier");
 const headingsCounter = require("./headingsCounter")
 const loginFormChecker  = require("./loginFormChecker");
-const internalAndExternalLinkCounter = require("./internalAndExternalLinkCounter");
+const linksCounter = require("./internalAndExternalLinkCounter");
+const determineHtmlVersion = require("./htmlVersionIdentifier");
 
 const scrapper = async (url) => {
     try {
@@ -13,10 +14,10 @@ const scrapper = async (url) => {
         const $ = cheerio.load(html);
         const baseDomain = new URL(url);
 
-        const htmlVersion = htmlVersionIdentifier($);
+        const htmlVersion = determineHtmlVersion($);
         const pageTitle = $('title').text();
         const headingsCount = headingsCounter($);
-        const linksCount = internalAndExternalLinkCounter($, baseDomain);
+        const linksCount = linksCounter($, baseDomain);
         const hasLoginForm = loginFormChecker($);
 
         return {
