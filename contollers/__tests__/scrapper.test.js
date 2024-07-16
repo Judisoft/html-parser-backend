@@ -1,8 +1,8 @@
 const cheerio = require("cheerio");
-const loginFormChecker  = require("./utils/loginFormChecker");
-const linksCounter = require("./utils/internalAndExternalLinkCounter");
-const headingsCounter = require("./utils/headingsCounter");
-const determineHtmlVersion = require("./utils/htmlVersionIdentifier");
+const loginFormChecker  = require("../../utils/loginFormChecker");
+const linksCounter = require("../../utils/internalAndExternalLinkCounter");
+const headingsCounter = require("../../utils/headingsCounter");
+const determineHtmlVersion = require("../../utils/htmlVersionIdentifier");
 
 describe('Utility functions', () => {
   let $;
