@@ -42,15 +42,16 @@ By default, the server will run on http://localhost:3000.
 
 URL: /api/v1/parse-html-page\
 Method: GET\
-Content-Type: application/json\
+Content-Type: application/json
 
 ### Request Body:
 
 {\
   "url": "http://example.com"\
-}\
+}
 
 ### Response:
+
 {\
   "htmlVersion": "HTML5",\
   "pageTitle": "Example Domain",\
@@ -74,7 +75,7 @@ Content-Type: application/json\
       "error": "Connection refused"\
     }\
   ]\
-}\
+}
 
 ## Code Structure
 
