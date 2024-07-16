@@ -23,16 +23,16 @@ This project is the backend component of an HTML Parser / Web Scraper web applic
 
 1. Clone the repository
 
- ## `git clone <repository_url>`
- ## `cd <repository_directory>`
+ ### `git clone <repository_url>`
+ ### `cd <repository_directory>`
 
 2. Install dependencies
 
- ## `npm install`
+ ### `npm install`
 
 ## Running the Server
 
- ## `npm start`
+ ### `npm start`
 
 By default, the server will run on http://localhost:3000.
 
@@ -84,7 +84,7 @@ Response:
 
 Unit tests are written using Jest. To run the tests, use the following command:
 
-## `npm test`
+### `npm test`
 
 ## Assumptions and Design Decisions
 
@@ -99,3 +99,6 @@ Performance: Concurrent link validation is used to handle multiple requests effi
 - Login Form Detection: The heuristic-based (trial and error) detection may not cover all possible login form implementations.
 - Link Validation: Dependent on network conditions and may have latency in checking numerous links.
 - Scalability: Designed for small to medium-scale usage; may require optimization for high-traffic scenarios.
+
+## Author 
+- Kum Jude Bama
