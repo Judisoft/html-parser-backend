@@ -21,14 +21,14 @@ This project is the backend component of an HTML Parser / Web Scraper web applic
 
 ## Installation
 
-1. Clone the repository
+### 1. Clone the repository
 
- ### `git clone <repository_url>`
- ### `cd <repository_directory>`
+  `git clone <repository_url>`
+ `cd <repository_directory>`
 
-2. Install dependencies
+### 2. Install dependencies
 
- ### `npm install`
+  `npm install`
 
 ## Running the Server
 
@@ -38,41 +38,43 @@ By default, the server will run on http://localhost:3000.
 
 ## API Endpoints
 
-Analyze URL
+### Parse  URL
 
-URL: /api/v1/parse-html-page
-Method: GET
-Content-Type: application/json
-Request Body:
-{
-  "url": "http://example.com"
-}
+URL: /api/v1/parse-html-page\
+Method: GET\
+Content-Type: application/json\
 
-Response:
-{
-  "htmlVersion": "HTML5",
-  "pageTitle": "Example Domain",
-  "headingsCount": {
-    "h1": 1,
-    "h2": 0
-  },
-  "linksCount": {
-    "internal": 10,
-    "external": 5
-  },
-  "hasLoginForm": true,
-  "linkValidationResults": [
-    {
-      "url": "http://example.com/internal-link",
-      "reachable": true
-    },
-    {
-      "url": "http://external.com/external-link",
-      "reachable": false,
-      "error": "Connection refused"
-    }
-  ]
-}
+### Request Body:
+
+{\
+  "url": "http://example.com"\
+}\
+
+### Response:
+{\
+  "htmlVersion": "HTML5",\
+  "pageTitle": "Example Domain",\
+  "headingsCount": {\
+    "h1": 1,\
+    "h2": 0\
+  },\
+  "linksCount": {\
+    "internal": 10,\
+    "external": 5\
+  },\
+  "hasLoginForm": true,\
+  "linkValidationResults": [\
+    {\
+      "url": "http://example.com/internal-link",\
+      "reachable": true\
+    },\
+    {\
+      "url": "http://external.com/external-link",\
+      "reachable": false,\
+      "error": "Connection refused"\
+    }\
+  ]\
+}\
 
 ## Code Structure
 
@@ -84,7 +86,7 @@ Response:
 
 Unit tests are written using Jest. To run the tests, use the following command:
 
-### `npm test`
+`npm test`
 
 ## Assumptions and Design Decisions
 
@@ -101,4 +103,4 @@ Performance: Concurrent link validation is used to handle multiple requests effi
 - Scalability: Designed for small to medium-scale usage; may require optimization for high-traffic scenarios.
 
 ## Author 
-- Kum Jude Bama
+- Kum Jude Bama [kumjude09@gmail.com]
