@@ -5,6 +5,7 @@ exports.processHTMLPage = async (req, res) => {
     const url = req.query.url
     const result = await scrapper(url);
     const linksCount = await result.linksCount;
+    const linkValidationResults = await result.linkValidationResults
     
     return res.status(200).json({
       success: true,
@@ -14,7 +15,8 @@ exports.processHTMLPage = async (req, res) => {
         pageTitle: result.pageTitle,
         headingsCount: result.headingsCount,
         linksCount: linksCount,  
-        hasLoginForm: result.hasLoginForm
+        hasLoginForm: result.hasLoginForm,
+        linkValidationResults: linkValidationResults
       }
     });
   } catch (error) {

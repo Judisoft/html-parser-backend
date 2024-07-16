@@ -6,6 +6,7 @@ const headingsCounter = require("./headingsCounter")
 const loginFormChecker  = require("./loginFormChecker");
 const linksCounter = require("./internalAndExternalLinkCounter");
 const determineHtmlVersion = require("./htmlVersionIdentifier");
+const validateLinks = require("./validateLinks");
 
 const scrapper = async (url) => {
     try {
@@ -14,11 +15,22 @@ const scrapper = async (url) => {
         const $ = cheerio.load(html);
         const baseDomain = new URL(url);
 
+        // Extract links - Optional task
+
+        const links = [];
+        $('a[href]').each((i, link) => {
+            links.push($(link).attr('href'));
+        });
+
+        // Validate links
+        const linkValidationResults = await validateLinks(links, baseDomain);
+
         const htmlVersion = determineHtmlVersion($);
         const pageTitle = $('title').text();
         const headingsCount = headingsCounter($);
         const linksCount = linksCounter($, baseDomain);
         const hasLoginForm = loginFormChecker($);
+        console.log(linkValidationResults);
 
         return {
             htmlVersion,
@@ -26,6 +38,7 @@ const scrapper = async (url) => {
             headingsCount,
             linksCount,
             hasLoginForm,
+            linkValidationResults,
         };
     } catch (error) {
         console.error('An error occurred while trying to scrape the page: ', error.message);
