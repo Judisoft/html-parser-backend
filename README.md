@@ -8,7 +8,7 @@ This project is the backend component of an HTML Parser / Web Scraper web applic
 
 - HTML Version Detection: Identifies the HTML version of the document.
 - Page Title Extraction: Retrieves and returns the page title.
-- Headings Count: Counts the number of headings [(<h1>, <h2>, etc.)] grouped by heading level.
+- Headings Count: Counts the number of headings grouped by heading level.
 - Links Count: Categorizes and counts hypermedia links as internal or external.
 - Login Form Detection: Detects the presence of login forms on the page.
 - Link Validation: Checks the reachability of all links and provides detailed error messages for any unreachable links.
