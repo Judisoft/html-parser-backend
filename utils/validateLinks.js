@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const validateLinks = async (links, baseDomain) => {
     const results = [];
-    const concurrencyLimit = 10; // Adjust based on server capacity, 10 is arbitrary
+    // const concurrencyLimit = 10; // Adjust based on server capacity, 10 is arbitrary
   
     await Promise.all(
       links.map(async (link) => {
@@ -12,7 +12,11 @@ const validateLinks = async (links, baseDomain) => {
           const reachable = new URL(destinationUrl).hostname === baseDomain.hostname;
           results.push({ url: link, reachable });
         } catch (error) {
-          results.push({ url: link, reachable: false, error: error.message });
+            if (error.code === 'ECONNREFUSED') {
+                results.push({ url: link, reachable: false, error: 'Connection refused' });
+              } else {
+                results.push({ url: link, reachable: false, error: error.message });
+            }
         }
       })
     );

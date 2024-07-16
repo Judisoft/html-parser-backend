@@ -19,7 +19,10 @@ const scrapper = async (url) => {
 
         const links = [];
         $('a[href]').each((i, link) => {
-            links.push($(link).attr('href'));
+            const href = $(link).attr('href');
+            if (href) {
+                links.push(href);
+            }
         });
 
         // Validate links
@@ -30,7 +33,6 @@ const scrapper = async (url) => {
         const headingsCount = headingsCounter($);
         const linksCount = linksCounter($, baseDomain);
         const hasLoginForm = loginFormChecker($);
-        console.log(linkValidationResults);
 
         return {
             htmlVersion,
