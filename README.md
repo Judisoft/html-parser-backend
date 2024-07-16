@@ -23,20 +23,21 @@ This project is the backend component of an HTML Parser / Web Scraper web applic
 
 1. Clone the repository
 
-### git clone <repository_url>
-### cd <repository_directory>
+ ## `git clone <repository_url>`
+ ## `cd <repository_directory>`
 
 2. Install dependencies
 
-### npm install
+ ## `npm install`
 
-Running the Server
+## Running the Server
 
-### npm start
+ ## `npm start`
 
 By default, the server will run on http://localhost:3000.
 
-API Endpoints
+## API Endpoints
+
 Analyze URL
 
 URL: /api/v1/parse-html-page
@@ -83,7 +84,7 @@ Response:
 
 Unit tests are written using Jest. To run the tests, use the following command:
 
-### npm test
+## `npm test`
 
 ## Assumptions and Design Decisions
 
