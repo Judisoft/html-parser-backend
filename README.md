@@ -99,9 +99,9 @@ Performance: Concurrent link validation is used to handle multiple requests effi
 
 ## Known Constraints and Limitations
 
-- Login Form Detection: The heuristic-based (trial and error) detection may not cover all possible login form implementations.\
-- Link Validation: Dependent on network conditions and may have latency in checking numerous links.\
-- Scalability: Designed for small to medium-scale usage; may require optimization for high-traffic scenarios.\
+- Login Form Detection: The heuristic-based (trial and error) detection may not cover all possible login form implementations.
+- Link Validation: Dependent on network conditions and may have latency in checking numerous links.
+- Scalability: Designed for small to medium-scale usage; may require optimization for high-traffic scenarios.
 
 ## Author 
 - Kum Jude Bama [kumjude09@gmail.com]
