@@ -91,17 +91,17 @@ Unit tests are written using Jest. To run the tests, use the following command:
 
 ## Assumptions and Design Decisions
 
-HTML Parsing: cheerio is used for its simplicity and effectiveness in server-side HTML parsing.
-Link Validation: axios is employed for robust HTTP requests and handling redirections.
-Error Handling: Comprehensive error handling is implemented to ensure meaningful feedback for all link validation issues.
+HTML Parsing: cheerio is used for its simplicity and effectiveness in server-side HTML parsing. \
+Link Validation: axios is employed for robust HTTP requests and handling redirections.\
+Error Handling: Comprehensive error handling is implemented to ensure meaningful feedback for all link validation issues.\
 Performance: Concurrent link validation is used to handle multiple requests efficiently.
 
 
 ## Known Constraints and Limitations
 
-- Login Form Detection: The heuristic-based (trial and error) detection may not cover all possible login form implementations.
-- Link Validation: Dependent on network conditions and may have latency in checking numerous links.
-- Scalability: Designed for small to medium-scale usage; may require optimization for high-traffic scenarios.
+- Login Form Detection: The heuristic-based (trial and error) detection may not cover all possible login form implementations.\
+- Link Validation: Dependent on network conditions and may have latency in checking numerous links.\
+- Scalability: Designed for small to medium-scale usage; may require optimization for high-traffic scenarios.\
 
 ## Author 
 - Kum Jude Bama [kumjude09@gmail.com]
