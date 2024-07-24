@@ -1,5 +1,5 @@
 const axios = require('axios');
-const validateLinks = require('../../utils/validateLinks');
+const validateLinks = require('../utils/validateLinks');
 
 jest.mock('axios');
 
